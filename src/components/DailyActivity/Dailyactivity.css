@@ -1,0 +1,17 @@
+.bar-custom-tooltip {
+    width: 39px;
+    height: 63px;
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.bar-custom-tooltip p {
+    margin: 0;
+    font-size: 10px;
+}

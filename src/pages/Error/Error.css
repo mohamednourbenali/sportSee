@@ -1,0 +1,21 @@
+.error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+}
+
+.error-title{
+    font-size: 48px;
+    color: red;
+}
+
+.link-home{
+    font-size: 24px;
+    color: black;
+}
+span{
+    color: red;
+    text-decoration: underline;
+}

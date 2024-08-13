@@ -1,0 +1,20 @@
+.nutriments{
+    width: 258px;
+    height: 124px;
+    background-color: #FBFBFB;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 50px;
+}
+img{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.numbers{
+    display: flex;
+    flex-direction: column;
+    line-height: 0px;
+}

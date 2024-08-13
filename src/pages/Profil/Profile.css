@@ -1,0 +1,27 @@
+.profil-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+}
+
+.nutriments-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.greetings-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.details{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.charts-container, .side{
+    width: 835px;
+}

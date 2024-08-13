@@ -1,0 +1,24 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.image-container{
+    width: 64px;
+    height: 64px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.image {
+    width: 36px;
+    height: 32px;
+}

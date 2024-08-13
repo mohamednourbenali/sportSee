@@ -1,0 +1,30 @@
+h3{
+    font-size: 15px;
+    max-width: 150px;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    margin : 5px 0px -5px 5px;
+    align-self: center; 
+}
+
+.average-session{
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-tooltip {
+    width: 39px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-tooltip .label {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+  }

@@ -1,0 +1,12 @@
+.score-title h3{
+    color : black;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.score-title{
+    position: relative;
+}

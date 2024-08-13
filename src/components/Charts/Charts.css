@@ -1,0 +1,67 @@
+.daily-activity{
+    height: 320px ;
+    width: 100%;
+    background-color:#FBFBFB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 25px;
+}
+.daily-activity-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.black-dot, .red-dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.black-dot{
+    background-color: black;
+}
+.red-dot{
+    background-color: red;
+}
+.legend{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.poid, .calories{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.charts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.session, .performance, .score {
+    width: 258px;
+    height: 263px;
+    border-radius: 15px;
+}
+
+.session{
+    background-color: red;
+}
+.performance{
+    background-color: #282D30;
+}
+.score{
+    background-color: #FBFBFB;
+}
+
+.other-charts{
+    display: flex;
+    justify-content: space-between;
+}

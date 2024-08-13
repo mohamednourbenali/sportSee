@@ -1,13 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './index.css';
-import App from './App';
+import App from './pages/Home/App.js';
 import reportWebVitals from './reportWebVitals';
+import Profil from './pages/Profil/Profil.js';
+import Header from './components/Header/Header.js'
+import Sidebar from './components/Sidebar/Sidebar.js';
+import Error from './pages/Error/Error.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <div className='home'>
+      <div className='header'>
+        <Header />
+      </div>
+      <div className='body'> 
+        <div className='side-bar'>
+          <Sidebar />
+          <div className="copiright">
+            <p>copiright SportSee 2020</p>
+          </div>
+        </div>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/user/:userId" element={<Profil />} />
+            <Route path='*' element={<Error/>} />
+          </Routes>
+      </div> 
+    </div>
+    </Router>
   </React.StrictMode>
 );
 
