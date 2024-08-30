@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { getUser } from '../../services/api.js';
+import { getUserData } from '../../services/api.js';
 import "./Charts.css";
 import Dailyactivity from "../../components/DailyActivity/Dailyactiviy.js"
 import Sessions from "../Sessions/Sessions.js";
@@ -12,13 +12,12 @@ function Charts ({userId}) {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const userData = await getUser(userId);
-                if(userData.data.todayScore){
-                    setUserScore(userData.data.todayScore);
+                const response = await getUserData ("USER_MAIN_DATA",userId);
+                if(response.data.todayScore){
+                    setUserScore(response.data.todayScore);
                 }else{
-                    setUserScore(userData.data.score);
-                }
-                
+                    setUserScore(response.data.score);
+                }                
             } catch (error) {
                 console.error('Failed to fetch user data:', error);
             }

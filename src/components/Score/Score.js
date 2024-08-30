@@ -1,9 +1,9 @@
 import React from "react";
 import { ResponsiveContainer, PieChart, Pie, Cell, Label } from "recharts";
-import "./Score.css"
+import "./Score.css";
+import CustomLabel from "../../utils/CustomLabel.js"
 
 function Score ({todayScore}) {
-    console.log("this is the todayScore : ", todayScore)
     const data = [
         {name : "user score", value : (todayScore*100)},
         {name : "score left", value : 100-(todayScore*100)},
@@ -32,16 +32,4 @@ function Score ({todayScore}) {
             </ResponsiveContainer>
     )
 }
-
-const CustomLabel = ({ viewBox, todayScore }) => {
-    const { cx, cy } = viewBox;
-    return (
-        <text x={cx} y={cy} fill="black" textAnchor="middle" dominantBaseline="central">
-            <tspan x={cx} dy="0.3em" fontSize="24">{`${todayScore * 100}%`}</tspan>
-            <tspan x={cx} dy="1.5em" fontSize="16">de votre</tspan>
-            <tspan x={cx} dy="1.5em" fontSize="16">objectif</tspan>
-        </text>
-    );
-};
-
 export default Score;

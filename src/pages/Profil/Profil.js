@@ -1,10 +1,9 @@
 import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
-import { getUser } from '../../services/api.js';
+import { getUserData } from '../../services/api.js';
 import Nutriments from "../../components/Nutriments/Nutriments.js";
 import "./Profile.css"
 import Charts from "../../components/Charts/Charts.js";
-
 function Profil () {
     const {userId} = useParams();
     const id = parseInt(userId, 10);
@@ -13,16 +12,14 @@ function Profil () {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const userData = await getUser(userId);
-                setUser(userData);
+                const response = await getUserData ("USER_MAIN_DATA",id);
+                setUser(response);
             } catch (error) {
                 console.error('Failed to fetch user data:', error);
             }
         };
         fetchUser(); 
     }, [userId]);
-
-    console.log("id : ",user);
 
     return (
         <div className="profil-container">

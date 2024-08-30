@@ -1,37 +1,13 @@
-import React,{ useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { getActivity} from '../../services/api.js';
-import "./Dailyactivity.css"
+import React from "react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import "./Dailyactivity.css";
+import { useFetchActivity } from "../../utils/useFetchActivity.js";
+import CustomTooltip from "../../utils/CustomTooltip.js";
+
 
 
 function Dailyactivity ({userId}) {
-    const[activity, setActivity] = useState(null);
-    useEffect(() => { 
-        const fetchActivity = async () => {
-            try{
-                const userActivity = await getActivity(userId);
-                const transformedActivity = userActivity.data.sessions.map(session => ({
-                    ...session,
-                    day: new Date(session.day).getDate()
-                  }));
-                  setActivity(transformedActivity);
-            } catch (error) {
-                console.error("failed to fetch user activity", error)
-            }
-        };
-        fetchActivity();
-    }, [userId]);
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="bar-custom-tooltip">
-                    <p>{`${payload[0].value} kg`}</p>
-                    <p>{`${payload[1].value} Cal`}</p>
-                </div>
-            );
-        }
-        return null;
-    };
+    const activity = useFetchActivity(userId);
     return (
         <ResponsiveContainer width="100%" height="50%">
             <BarChart data={activity} barGap={8}>
